@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Page for House">
+    <meta name="keywords" content="HTML, CSS, Product Page, Real Estate">
+    <meta name="author" content="Your Name">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Carousel Section */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .carousel img {
+            width: 100%;
+            height: 100vh;
+            object-fit:fill;
+            border-radius: 10px;
+
+        }
+        .carousel img:not(:first-child) {
+            display: none;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        /* House Details */
+        .house-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .house-details div {
+            width: 48%;
+        }
+        .house-details h2, .house-details h4 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .house-details p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .owner-info {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Buy and Rent Buttons */
+        .action-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .action-buttons button {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .action-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Similar Products Section */
+        .similar-products {
+            margin: 50px 0;
+            text-align: center;
+        }
+        .similar-products h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .house-card {
+            background-color: white;
+            border-radius: 10px;
+            width: 18%;
+            margin: 1%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+            transition: transform 0.3s;
+        }
+        .house-card:hover {
+            transform: translateY(-5px);
+        }
+        .house-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .house-info {
+            margin-top: 10px;
+        }
+        .house-info h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .house-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .house-info .rating {
+            color: gold;
+        }
+        .house-info .location {
+            color: gray;
+            font-size: 14px;
+        }
+        .house-info .view-more {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+         /* Navbar and Search Bar */
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+        .search-bar {
+            margin-left: 20px;
+        }
+        .search-bar input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            display: flex;
+            justify-content: center;
+            background-color: #007BFF;
+            padding: 10px 0;
+            color: white;
+        }
+        .menu-bar a {
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">House-Hub</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for houses...">
+        </div>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </div>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+        <a href="home.html">Home</a>
+        <a href="#">Buy</a>
+        <a href="#">Rent</a>
+        <a href="#">Sell</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="container">
+        <!-- Carousel Section -->
+        <div class="carousel">
+            <img src="https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D" alt="House Image 1">
+            <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D" alt="House Image 2">
+            <img src="https://plus.unsplash.com/premium_photo-1673014202349-38687dd47f94?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D" alt="House Image 3">
+            <div class="carousel-buttons">
+                <button onclick="prevSlide()">&#10094;</button>
+                <button onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- House Details Section -->
+        <div class="house-details">
+            <div>
+                <h2>Beautiful Family House</h2>
+                <h4>Location: New York, USA</h4>
+                <p>Features: Spacious living area, modern kitchen, garden, and parking space. The house is located in a peaceful neighborhood with easy access to schools, shopping centers, and public transportation.</p>
+                <p>Physical Details: 3500 sq.ft, 2 floors, modern architecture.</p>
+                <p>Rooms: 4 Bedrooms, 3 Bathrooms, 1 Kitchen, 1 Living Room.</p>
+                <h2>Cost: 500,000/-</h2>
+            </div>
+            <div class="owner-info">
+
+                <p>Owner Details: Experienced real estate owner with over 10 years in the business. Specialized in high-end properties across the USA.</p>
+                <p>Number of Houses Owned: 2</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+            </div>
+        </div>
+
+        <!-- Buy and Rent Buttons -->
+        <div class="action-buttons">
+           <a href="buy.html"> <button>Buy Now</button></a>
+           <a href="rent.html"><button>Rent Now</button></a> 
+        </div>
+
+        <!-- Similar Products Section -->
+        <div class="similar-products">
+            <h3>Similar Houses You May Like</h3>
+            <div class="card-container">
+                <!-- Repeat 10 house card elements -->
+                <div class="house-card">
+                    <img src="https://files.oaiusercontent.com/file-J1EZsSdcoJBuD5lijmkOYuMT?se=2024-10-07T17%3A04%3A13Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Da71b12ad-dcf1-4f1c-9243-33c1e7389393.webp&sig=MsEBFpMhtaeFpYhxI33%2BnHwTAyxwndrPL05P6Z4/JjE%3D" alt="House Image">
+                    <div class="house-info">
+                        <h3>Luxury Villa</h3>
+                        <p class="rating">⭐⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="product.html" class="view-more">View More</a>
+                    </div>
+                </div>
+                <div class="house-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXcYII1Z4wsGrf7AbGq4juVS6dzCg_FN1Jw&s" alt="House Image">
+                    <div class="house-info">
+                        <h3>Modern Apartment</h3>
+                        <p class="rating">⭐⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="product.html" class="view-more">View More</a>
+                    </div>
+                </div>
+                <div class="house-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRG-rIcT21oLWSTodmO7x2MKHoYxnnaKtm5w&s" alt="House Image">
+                    <div class="house-info">
+                        <h3>Maplewood Cottage</h3>
+                        <p class="rating">⭐⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="product.html" class="view-more">View More</a>
+                    </div>
+                </div>
+                <div class="house-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_XSAzsCINOJpynMR4_v3aFxH_KP4CY_qMhQ&s" alt="House Image">
+                    <div class="house-info">
+                        <h3>Rosewood Manor</h3>
+                        <p class="rating">⭐⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="product.html" class="view-more">View More</a>
+                    </div>
+                </div>
+                <div class="house-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIiTGSwdg4R6mAfmP_pws7UxFq0potur7pag&s" alt="House Image">
+                    <div class="house-info">
+                        <h3>Willowbrook Estate
+                        </h3>
+                        <p class="rating">⭐⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="product.html" class="view-more">View More</a>
+                    </div>
+                </div>
+                <!-- Copy the above house card element 9 more times for 10 cards total -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".carousel img");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? "block" : "none";
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Initial display of the first slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

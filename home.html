@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Home Page for Real Estate">
+    <meta name="keywords" content="HTML, CSS, Home, Houses, Sellers, Reviews">
+    <meta name="author" content="Your Name">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        /* Navbar and Search Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+        .search-bar {
+            margin-left: 20px;
+        }
+        .search-bar input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            display: flex;
+            justify-content: center;
+            background-color: #007BFF;
+            padding: 10px 0;
+            color: white;
+        }
+        .menu-bar a {
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* House Cards */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .house-card {
+            background-color: white;
+            border-radius: 10px;
+            width: 18%;
+        margin:1%;
+        margin-bottom: 0%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .house-card img {
+            width: 100%;
+            height:200px;
+            border-radius: 10px;
+        }
+        .house-info {
+            margin-top: 10px;
+        }
+        .house-info h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .house-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .house-info .rating {
+            color: gold;
+        }
+        .house-info .location {
+            color: gray;
+            font-size: 14px;
+        }
+        .house-info .view-more {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .view-more{
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Seller Cards */
+        .seller-card-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+        .seller-card {
+            background-color: white;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .seller-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+        .seller-card h4 {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .seller-card p {
+            font-size: 12px;
+            color: gray;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: #f8f8f8;
+            padding: 30px;
+            text-align: center;
+        }
+        .reviews h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .review-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .review-card p {
+            color: #666;
+            font-size: 16px;
+        }
+        .review-card h4 {
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">House-Hub</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for houses...">
+        </div>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </div>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+        <a href="#">Home</a>
+        <a href="#">Buy</a>
+        <a href="#">Rent</a>
+        <a href="#">Sell</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+<div class="d-flex flex-column">
+    <!-- House Cards -->
+    <div class="card-container">
+        <!-- Repeat 10 house card elements -->
+        <div class="house-card">
+            <img src="https://files.oaiusercontent.com/file-J1EZsSdcoJBuD5lijmkOYuMT?se=2024-10-07T17%3A04%3A13Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Da71b12ad-dcf1-4f1c-9243-33c1e7389393.webp&sig=MsEBFpMhtaeFpYhxI33%2BnHwTAyxwndrPL05P6Z4/JjE%3D" alt="House Image">
+            <div class="house-info">
+                <h3>Luxury Villa</h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div>
+        <div class="house-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXcYII1Z4wsGrf7AbGq4juVS6dzCg_FN1Jw&s" alt="House Image">
+            <div class="house-info">
+                <h3>Modern Apartment</h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div>
+        <div class="house-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRG-rIcT21oLWSTodmO7x2MKHoYxnnaKtm5w&s" alt="House Image">
+            <div class="house-info">
+                <h3>Maplewood Cottage</h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div><div class="house-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_XSAzsCINOJpynMR4_v3aFxH_KP4CY_qMhQ&s" alt="House Image">
+            <div class="house-info">
+                <h3>Rosewood Manor</h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div><div class="house-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIiTGSwdg4R6mAfmP_pws7UxFq0potur7pag&s" alt="House Image">
+            <div class="house-info">
+                <h3>Willowbrook Estate
+                </h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div>
+        <!-- Copy the above house card element 9 more times for 10 cards total -->
+    </div>
+    <div class="card-container">
+        <!-- Repeat 10 house card elements -->
+        <div class="house-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sVxuDHSH8rROc-LRwCUpTHIQjf8zq7apXQ&s" alt="House Image">
+            <div class="house-info">
+                <h3>Sunnyvale Residence</h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div>
+        <div class="house-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROlkP9jpU8sLiaw5oIuqrVC0J9oWCo80NErA&s" alt="House Image">
+            <div class="house-info">
+                <h3>Bluebird Haven</h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div>
+        <div class="house-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuax61yVuLOweusAfSmKtvPBXC_I1wgiCLHw&s" alt="House Image">
+            <div class="house-info">
+                <h3>Oakridge Villa</h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div><div class="house-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrEVcQID71Al1Cd1BGdOjKlTKcm11bQzjNGg&s" alt="House Image">
+            <div class="house-info">
+                <h3>Pinecrest Lodge</h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div><div class="house-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsyP58m4jxZK3Fh81LRt19g3IbTVajqHw8Q&s" alt="House Image">
+            <div class="house-info">
+                <h3>Stonegate House</h3>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+                <p class="location">Location: New York, USA</p>
+                <a href="product.html" class="view-more">View More</a>
+            </div>
+        </div>
+        <!-- Copy the above house card element 9 more times for 10 cards total -->
+    </div>
+</div>
+    <!-- Seller Cards -->
+  
+    <div class="seller-card-container">
+        <!-- Repeat 5 seller card elements -->
+        <div class="seller-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6k-r53FAanP9DB8co0878i8RSzmQcSZrpew&s" alt="Seller Image">
+            <h4>John Doe</h4>
+         
+            <a href="seller.html" class="view-more">View More</a>
+        </div>
+        <div class="seller-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-_lpRHaBAC-EvDUxZuwUmoUdIDcI6UnbmQ&s" alt="Seller Image">
+            <h4>Mustaq</h4>
+          
+            <a href="seller2.html" class="view-more">View More</a>
+        </div>
+        <div class="seller-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXNC784XWqZtExOoyh9V4rF3qIYcsHtcENgQ&s" alt="Seller Image">
+            <h4>Joseph Paul</h4>
+  
+            <a href="seller3.html" class="view-more">View More</a>
+        </div>
+        <div class="seller-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkln5ZLO-neYjv6kYNxzmIAncLlBSUOcq1g&s" alt="Seller Image">
+            <h4>Sunny Dayal</h4>
+          
+            <a href="seller4.html" class="view-more">View More</a>
+        </div>
+        <div class="seller-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKPenxss4pDaCFRhfd0B3fJqtJ48Bp9e8cqw&s" alt="Seller Image">
+            <h4>Ramakanth</h4>
+           
+            <a href="seller5.html" class="view-more">View More</a>
+        </div>
+        <!-- Copy the above seller card element 4 more times for 5 sellers total -->
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews pt-3">
+        <h2>Customer Reviews</h2>
+        <!-- Repeatable review card -->
+        <div class="review-card">
+            <p>"This website has been amazing for finding my new home. The quality of listings is top-notch and the user experience is smooth."</p>
+            <h4>- Jane Smith</h4>
+        </div>
+        <!-- Copy the above review card as needed for multiple reviews -->
+    </div>
+
+</body>
+</html>

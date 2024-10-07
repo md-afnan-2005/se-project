@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Payment Page">
+    <meta name="keywords" content="HTML, CSS, Payment, E-commerce">
+    <meta name="author" content="Your Name">
+    <title>Payment Page</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #232f3e;
+            padding: 15px;
+            color: #fff;
+            text-align: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Section Title */
+        .section-title {
+            background-color: #e7e7e7;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        /* Form Section Styling */
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section input[type="text"],
+        .form-section input[type="number"],
+        .form-section input[type="email"],
+        .form-section input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-section label {
+            font-weight: bold;
+        }
+
+        /* Payment Options Styling */
+        .payment-options {
+            display: flex;
+            justify-content: space-between;
+        }
+        .payment-option {
+            width: 30%;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .payment-option:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-option img {
+            width: 100%;
+            border-radius: 10px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .payment-option h3 {
+            margin-top: 15px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        /* Order Summary Section */
+        .order-summary {
+            margin-top: 40px;
+        }
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .order-summary th, .order-summary td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .order-summary th {
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .order-summary td {
+            color: #555;
+        }
+
+        /* Place Order Button */
+        .place-order {
+            text-align: right;
+        }
+        .place-order button {
+            background-color: #FF9900;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .place-order button:hover {
+            background-color: #e68a00;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Payment Page</h1>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Payment Methods Section -->
+        <div class="form-section">
+            <div class="section-title">Payment Methods</div>
+            <div class="payment-options">
+                <div class="payment-option">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCEUjpaoWKi62BHw_Zsp6To1SiIEE14jRYvg&s" alt="Credit/Debit Card">
+                    <h3>Credit/Debit Card</h3>
+                    <form>
+                        <label for="card-name">Name on Card</label>
+                        <input type="text" id="card-name" placeholder="Full Name">
+
+                        <label for="card-number">Card Number</label>
+                        <input type="number" id="card-number" placeholder="1111-2222-3333-4444">
+
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="text" id="expiry-date" placeholder="MM/YY">
+
+                        <label for="cvv">CVV</label>
+                        <input type="password" id="cvv" placeholder="***">
+                    </form>
+                </div>
+
+                <div class="payment-option">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUC77gkuYzVE0dQTZLvXZiUDwuRb_bmxGREQ&s" alt="Net Banking">
+                    <h3>Net Banking</h3>
+                    <form>
+                        <label for="bank-name">Enter Bank Name</label>
+                        <input type="text" id="bank-name" placeholder="Bank Name">
+                    </form>
+                </div>
+
+                <div class="payment-option">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3T0D2SVV_NAPTOCGtsyHesPW27X3fRcv3Fw&s" alt="UPI">
+                    <h3>UPI</h3>
+                    <form>
+                        <label for="upi-id">UPI ID</label>
+                        <input type="text" id="upi-id" placeholder="example@upi">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Address Section -->
+        <div class="form-section">
+            <div class="section-title">Delivery Address</div>
+            <form>
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" placeholder="Full Name">
+
+                <label for="address-line1">Address Line 1</label>
+                <input type="text" id="address-line1" placeholder="Street Address, P.O. Box, etc.">
+
+                <label for="address-line2">Address Line 2</label>
+                <input type="text" id="address-line2" placeholder="Apartment, Suite, Unit, Building, etc.">
+
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="City">
+
+                <label for="zip-code">Zip Code</label>
+                <input type="text" id="zip-code" placeholder="Zip Code">
+            </form>
+        </div>
+
+        <!-- Order Summary Section -->
+        <div class="order-summary">
+            <div class="section-title">Order Summary</div>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>House 1</td>
+                    <td>1</td>
+                    <td>500,000/-</td>
+                    <td>500,000/-</td>
+                </tr>
+          
+                <tr>
+                    <td colspan="3" style="text-align:right"><strong>Subtotal</strong></td>
+                    <td>500,000/-</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align:right"><strong>Shipping</strong></td>
+                    <td>0/-</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align:right"><strong>Total</strong></td>
+                    <td><strong>500,000/-</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Place Order Button -->
+        <div class="place-order">
+            <a href="ackn.html"><button>Place Order</button></a>
+        </div>
+    </div>
+</body>
+</html>

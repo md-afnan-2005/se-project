@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seller Profile Page">
+    <meta name="keywords" content="HTML, CSS, Seller Profile, Real Estate">
+    <meta name="author" content="Your Name">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Seller Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Seller Info Section */
+        .seller-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .seller-info img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .seller-details h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+        }
+        .seller-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .seller-details .rating {
+            color: gold;
+        }
+
+        /* Seller Houses Section */
+        .houses-container {
+            margin-bottom: 50px;
+        }
+        .houses-container h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .house-card {
+            background-color: white;
+            border-radius: 10px;
+            width: 50%;
+            height:400px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+          
+          
+        }
+        .house-card img {
+            width: 100%;
+            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .house-info {
+            margin-top: 10px;
+        }
+        .house-info h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .house-info p {
+            color: #666;
+        }
+        .house-info .rating {
+            color: gold;
+        }
+        .house-info .location {
+            color: gray;
+            font-size: 14px;
+        }
+        .house-info .view-more {
+           
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Customer Reviews Section */
+        .reviews-container {
+            margin-bottom: 50px;
+        }
+        .reviews-container h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .review {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .review p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .review strong {
+            color: #333;
+        }
+
+        /* Similar Products Section */
+        .similar-products {
+            margin: 50px 0;
+            text-align: center;
+        }
+        .similar-products h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .house-card-similar {
+            background-color: white;
+            border-radius: 10px;
+            width: 18%;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+          
+        }
+        .house-card-similar:hover {
+            transform: translateY(-5px);
+        }
+        .house-card-similar img {
+            width: 100%;
+            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .house-info-similar {
+            margin-top: 10px;
+        }
+        .house-info-similar h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .house-info-similar p {
+            color: #666;
+        }
+        .house-info-similar .rating {
+            color: gold;
+        }
+        .house-info-similar .location {
+            color: gray;
+            font-size: 14px;
+        }
+        .house-info-similar .view-more {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+         /* Navbar and Search Bar */
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+        .search-bar {
+            margin-left: 20px;
+        }
+        .search-bar input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            display: flex;
+            justify-content: center;
+            background-color: #007BFF;
+            padding: 10px 0;
+            color: white;
+        }
+        .menu-bar a {
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">House-Hub</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for houses...">
+        </div>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </div>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+        <a href="home.html">Home</a>
+        <a href="#">Buy</a>
+        <a href="#">Rent</a>
+        <a href="#">Sell</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="container">
+        <!-- Seller Info Section -->
+        <div class="seller-info">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-_lpRHaBAC-EvDUxZuwUmoUdIDcI6UnbmQ&s" alt="Seller Image">
+            <div class="seller-details">
+                <h2>Mustaq</h2>
+                <p>Number of Houses: 2</p>
+                <p>Mobile No: +917013596448</p>
+                <p class="rating">⭐⭐⭐⭐⭐</p>
+            </div>
+        </div>
+
+        <!-- Seller Houses Section -->
+        <div class="houses-container">
+            <h3>Houses Listed by Mustaq</h3>
+            <div class="d-flex flex-row justify-content-center">
+            <div class="house-card mr-5">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRG-rIcT21oLWSTodmO7x2MKHoYxnnaKtm5w&s" alt="House 1 Image">
+                <div class="house-info">
+                    <h3>Maplewood Cottage</h3>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="location">Location: Beverly Hills, USA</p>
+                    <a href="product.html" class="view-more">View More</a>
+                </div>
+            </div>
+            <div class="house-card ml-5">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_XSAzsCINOJpynMR4_v3aFxH_KP4CY_qMhQ&s" alt="House 2 Image">
+                <div class="house-info">
+                    <h3>Rosewood Manor</h3>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="location">Location: New York, USA</p>
+                    <a href="product.html" class="view-more">View More</a>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Customer Reviews Section -->
+        <div class="reviews-container">
+            <h3>Customer Reviews</h3>
+            <div class="review">
+                <p><strong>Alice Smith:</strong> John is an amazing seller. His properties are top-notch, and he was very helpful throughout the process.</p>
+            </div>
+            <div class="review">
+                <p><strong>Michael Johnson:</strong> I had a great experience working with John. His attention to detail and professionalism is outstanding.</p>
+            </div>
+        </div>
+
+        <!-- Similar Products Section -->
+        <div class="similar-products">
+            <h3>Similar Houses You May Like</h3>
+            <div class="card-container">
+                <!-- Repeat similar house card elements -->
+                <div class="house-card-similar">
+                    <img src="https://files.oaiusercontent.com/file-J1EZsSdcoJBuD5lijmkOYuMT?se=2024-10-07T17%3A04%3A13Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Da71b12ad-dcf1-4f1c-9243-33c1e7389393.webp&sig=MsEBFpMhtaeFpYhxI33%2BnHwTAyxwndrPL05P6Z4/JjE%3D" alt="House Image">
+                    <div class="house-info-similar">
+                        <h3>Luxury Villa</h3>
+                        <p class="rating">⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
+                </div>
+                <div class="house-card-similar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXcYII1Z4wsGrf7AbGq4juVS6dzCg_FN1Jw&s" alt="House Image">
+                    <div class="house-info-similar">
+                        <h3>Modern Apartment</h3>
+                        <p class="rating">⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
+                </div>
+                <div class="house-card-similar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRG-rIcT21oLWSTodmO7x2MKHoYxnnaKtm5w&s" alt="House Image">
+                    <div class="house-info-similar">
+                        <h3>Maplewood Cottage</h3>
+                        <p class="rating">⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
+                </div>
+                <div class="house-card-similar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_XSAzsCINOJpynMR4_v3aFxH_KP4CY_qMhQ&s" alt="House Image">
+                    <div class="house-info-similar">
+                        <h3>Rosewood Manor</h3>
+                        <p class="rating">⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
+                </div>
+                <div class="house-card-similar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIiTGSwdg4R6mAfmP_pws7UxFq0potur7pag&s" alt="House Image">
+                    <div class="house-info-similar">
+                        <h3>Willowbrook Estate</h3>
+                        <p class="rating">⭐⭐⭐⭐</p>
+                        <p class="location">Location: Los Angeles, USA</p>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
+                </div>
+                <!-- Copy the above house card element for 4 more times for 5 similar products total -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

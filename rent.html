@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rental Payment Page">
+    <meta name="keywords" content="HTML, CSS, Rent, Payment, Real Estate">
+    <meta name="author" content="Your Name">
+    <title>Rental Payment Page</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #232f3e;
+            padding: 15px;
+            color: #fff;
+            text-align: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Section Title */
+        .section-title {
+            background-color: #e7e7e7;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        /* Form Section Styling */
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section input[type="text"],
+        .form-section input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-section label {
+            font-weight: bold;
+        }
+
+        /* Payment Section Styling */
+        .payment-section {
+            margin: 20px 0;
+        }
+
+        .payment-method {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-method label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .payment-method input {
+            margin-right: 5px;
+        }
+
+        /* Payment Details Section */
+        .payment-details {
+            margin-bottom: 20px;
+            display: none;
+            flex-direction: column;
+        }
+
+        .payment-details input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .show {
+            display: flex;
+        }
+
+        /* Confirmation Section */
+        .confirmation {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .confirmation h3 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        /* Confirmation Button */
+        .confirmation button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 20px;
+        }
+        .confirmation button:hover {
+            background-color: #218838;
+        }
+
+        /* Owner Details Section */
+        .owner-details {
+            display: none;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+a{
+    color:green;
+    font-weight:bold;
+    
+}
+        .owner-details h3 {
+            font-size: 20px;
+            color: #555;
+        }
+        .owner-details p {
+            font-size: 16px;
+            color: #333;
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        // Show Payment Details based on the selected Payment Method
+        function showPaymentDetails() {
+            var paymentDetailsSection = document.querySelector('.payment-details');
+            paymentDetailsSection.classList.add('show');
+        }
+
+        // Function to confirm the rental decision and show owner details
+        function confirmRental() {
+            // Hide the confirmation section and show the owner details section
+            document.querySelector('.confirmation').style.display = 'none';
+            document.querySelector('.owner-details').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Rent Payment Page</h1>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Rental Details Section -->
+        <div class="form-section">
+            <div class="section-title">Renting Details</div>
+            <form>
+                <!-- Address Input -->
+                <label for="address">Delivery Address</label>
+                <input type="text" id="address" placeholder="Enter your full address">
+
+                <!-- Advance Amount Input -->
+                <label for="advance-amount">Advance Amount</label>
+                <input type="number" id="advance-amount" placeholder="Enter advance amount (e.g., 5000)">
+            </form>
+        </div>
+
+        <!-- Payment Method Section -->
+        <div class="payment-section">
+            <div class="section-title">Select Payment Method</div>
+            <div class="payment-method">
+                <label>
+                    <input type="radio" name="payment-method" value="credit-card" onclick="showPaymentDetails()"> Credit Card
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="debit-card" onclick="showPaymentDetails()"> Debit Card
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="upi" onclick="showPaymentDetails()"> UPI
+                </label>
+            </div>
+
+            <!-- Payment Details Input Section -->
+            <div class="payment-details">
+                <input type="text" placeholder="Card Number / UPI ID">
+                <input type="text" placeholder="Name on Card">
+                <input type="text" placeholder="Expiry Date (MM/YY)">
+                <input type="number" placeholder="CVV">
+            </div>
+        </div>
+
+        <!-- Confirmation Section -->
+        <div class="confirmation">
+            <h3>Confirm Renting Decision & Payment</h3>
+            <p>By clicking on 'Pay & Confirm Rent', you agree to rent this property, pay the specified advance amount, and see the owner's details.</p>
+            <button onclick="confirmRental()">Pay & Confirm Rent</button>
+        </div>
+
+        <!-- Owner Details Section -->
+        <div class="owner-details">
+            <h3>Owner's Details</h3>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Contact Number:</strong> +917013596447</p>
+            <p><strong>Email:</strong> john.doe@email.com</p>
+            <p><strong>Address:</strong> 1234 Main Street, Anytown, USA</p>
+            <p><strong>Note:</strong> From the next month onwards, you must contact the owner directly for all rent payments and property-related discussions. Further transactions will not be handled through this site.</p>
+            <a href="Feedback.html">Please provide your valuable feedback here!</a>
+        </div>
+        
+    </div>
+</body>
+</html>
